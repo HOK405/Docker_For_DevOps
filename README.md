@@ -1,6 +1,6 @@
 # Console Commands
 ```console
-docker build . -t <hok>/node-web-app
+docker build . -t hok/node-web-app
 docker images
 ```
 ### Running
