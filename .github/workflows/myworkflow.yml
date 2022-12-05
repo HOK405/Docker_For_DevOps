@@ -1,0 +1,21 @@
+name: MyLinter
+on: push
+
+jobs:
+  linterjob:
+    name: Lint code
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout 
+          uses: actions/checkout@v3
+        - name: MyLint
+          uses: github/super-linter@v4.9.7
+        - name: Build image 
+          run: docker build . -t treon405/myrepo2              # build docker image
+        - name: Log into Dockerhub 
+          uses: docker/login-action@v2
+          with:
+            username: treon405
+            password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        - name: Docker push                                     # push docker image
+          run: docker push treon405/myrepo2   
