@@ -8,3 +8,5 @@ docker stats
 docker exec -it <ID> /bin/bash
 curl -i localhost:80
 ```
+# Kubernetes :
+
